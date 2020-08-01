@@ -6,7 +6,7 @@ from skimage import io
 
 class Cards(Dataset):
 	def __init__(self, csv_file, root_dir, transform=None):
-		self.annotations = pd.read.csv(csv_file)
+		self.annotations = pd.read_csv(csv_file)
 		self.root_dir = root_dir
 		self.transform = transform
 

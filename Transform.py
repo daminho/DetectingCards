@@ -14,16 +14,11 @@ my_transforms = transforms.Compose([
 	transforms.ToPILImage(),
 	transforms.Resize((256,256)),
 	transforms.RandomCrop((224,224)),
-<<<<<<< HEAD
-	transforms.ColorJitter(brightness = uniform(0.4,0.6)),
-	transforms.RandomRotation(degree = 45),
-=======
 	transforms.ColorJitter(brightness = np.random.uniform(0.4,0.6),contrast = np.random.uniform(0.4,0.6),saturation = np.random.uniform(0.4,0.6),hue = np.random.uniform(0.4,0.6)),
-	transforms.RandomRotation(degree = np.random.uniform(0,359)),
->>>>>>> f11c0f07fd197093ce6e1032487d597cf89d8082
+	transforms.RandomRotation(degrees = 45),
 	transforms.RandomHorizontalFlip(p=0.5),
 	transforms.RandomVerticalFlip(p=0.05),
-	transforms.RandomGreyScale(p=0.2),
+	transforms.RandomGrayscale(p=0.2),
 	transforms.ToTensor(),
 	transforms.Normalize(mean=[0.0, 0.0, 0.0], std=[1.0,1.0,1.0])
 	])
