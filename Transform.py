@@ -13,8 +13,8 @@ my_transforms = transforms.Compose([
 	transforms.ToPILImage(),
 	transforms.Resize((256,256)),
 	transforms.RandomCrop((224,224)),
-	transforms.ColorJitter(brightness = 0.5),
-	transforms.RandomRotation(degree = 45),
+	transforms.ColorJitter(brightness = uniform(0.4,0.6),contrast = uniform(0.4,0.6),saturation = uniform(0.4,0.6),hue = uniform(0.4,0.6)),
+	transforms.RandomRotation(degree = uniform(0,359)),
 	transforms.RandomHorizontalFlip(p=0.5),
 	transforms.RandomVerticalFlip(p=0.05),
 	transforms.RandomGreyScale(p=0.2),
@@ -25,7 +25,7 @@ my_transforms = transforms.Compose([
 dataset = Cards(csv_file = 'Cards.csv', root_dir = 'Cards', transforms = my_transforms)
 
 img_num = 0
-for _ in range(10):
+for _ in range(50):
 	for im, label in dataset:
 		save_image(img, 'img'+str(ing_num)+'.png')
 		img_num += 1
