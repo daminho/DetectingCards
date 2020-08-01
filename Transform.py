@@ -13,7 +13,7 @@ my_transforms = transforms.Compose([
 	transforms.ToPILImage(),
 	transforms.Resize((256,256)),
 	transforms.RandomCrop((224,224)),
-	transforms.ColorJitter(brightness = 0.5),
+	transforms.ColorJitter(brightness = uniform(0.4,0.6)),
 	transforms.RandomRotation(degree = 45),
 	transforms.RandomHorizontalFlip(p=0.5),
 	transforms.RandomVerticalFlip(p=0.05),
